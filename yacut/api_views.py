@@ -24,7 +24,7 @@ def create_short_link():
     if 'url' not in data:
         raise InvalidAPIUsage(REQUIRED_FIELD, HTTPStatus.BAD_REQUEST)
 
-    if 'custom_id' not in data or data['custom_id'] is None:
+    if 'custom_id' == '' or data['custom_id'] is None:
         data['custom_id'] = URLMap.get_unique_short_id()
 
     custom_id = data['custom_id']
