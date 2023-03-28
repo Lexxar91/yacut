@@ -14,3 +14,15 @@ def check_symbols(custom_id):
         if elem not in SYMBOLS_CHOICE:
             return False
     return True
+
+
+def check_short_link(custom_id):
+    """
+    Функция проверки наличия пользовательского идентификатора в базе данных.
+
+    :param custom_id: Пользовательский идентификатор.
+    :return: Пользовательский идентификатор, если он уже есть в базе данных, None - в противном случае.
+    """
+    if URLMap.query.filter_by(short=custom_id).first() is None or custom_id == '':
+        return custom_id
+    return None
