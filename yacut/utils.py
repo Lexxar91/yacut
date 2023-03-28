@@ -1,5 +1,7 @@
+import random
 from string import ascii_letters, digits
 
+from yacut.constants import CHARS
 from yacut.models import URLMap
 
 SYMBOLS_CHOICE = list(ascii_letters + digits)
@@ -29,3 +31,7 @@ def check_short_link(custom_id):
     if URLMap.query.filter_by(short=custom_id).first() is not None:
         return custom_id
     return None
+
+
+def get_unique_short_id() -> str:
+    return str(''.join(random.choice(CHARS) for _ in range(1, 7)))
