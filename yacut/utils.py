@@ -26,6 +26,6 @@ def check_short_link(custom_id):
     :param custom_id: Пользовательский идентификатор.
     :return: Пользовательский идентификатор, если он уже есть в базе данных, None - в противном случае.
     """
-    if URLMap.query.filter_by(short=custom_id).first() is None or custom_id == '':
+    if URLMap.query.filter_by(short=custom_id).first() or custom_id is None or custom_id == '':
         return custom_id
     return None
