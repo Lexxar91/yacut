@@ -1,5 +1,5 @@
 NAME_LINK_ALREADY_EXISTS = f'Данное имя ссылки уже занято!'
-YOUR_NEW_SHORT_LINK = f'Ваша новая ссылка готова: '
+YOUR_NEW_SHORT_LINK = f'Ваша новая ссылка готова:'
 DESCRIPTION_URL = 'Длинная ссылка'
 YOUR_CHOICE = 'Ваш вариант короткой ссылки'
 CHARS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
