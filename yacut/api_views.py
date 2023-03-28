@@ -18,7 +18,7 @@ def create_short_link():
     либо имя короткой ссылки содержит недопустимые символы.
     """
     data = request.get_json()
-    if data is None:
+    if not data:
         raise InvalidAPIUsage(MISSING_REQUEST)
 
     if 'url' not in data:

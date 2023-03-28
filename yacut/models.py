@@ -1,9 +1,8 @@
 from datetime import datetime
+from yacut import db
 import random
 
 from flask import url_for
-
-from . import db
 from sqlalchemy_utils import URLType
 
 from .constants import CHARS
