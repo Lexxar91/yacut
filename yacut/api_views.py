@@ -2,8 +2,9 @@ from flask import jsonify, request
 from http import HTTPStatus
 from . import app, db
 from .constants import NOT_FOUND_ID, MISSING_REQUEST, REQUIRED_FIELD, ERROR_SHORT_URL
-from .error_handlers import InvalidAPIUsage, check_short_link, check_symbols
+from .error_handlers import InvalidAPIUsage, check_short_link
 from .models import URLMap
+from .utils import check_symbols
 
 
 @app.route('/api/id/', methods=['POST'])

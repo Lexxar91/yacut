@@ -1,11 +1,8 @@
 from flask import jsonify, render_template
 from http import HTTPStatus
-from string import ascii_letters, digits
 
 from . import app, db
 from yacut.models import URLMap
-
-SYMBOLS_CHOICE = list(ascii_letters + digits)
 
 
 @app.errorhandler(404)
@@ -64,20 +61,6 @@ def internal_error(error):
     """
     db.session.rollback()
     return render_template('500.html'), HTTPStatus.INTERNAL_SERVER_ERROR
-
-
-def check_symbols(custom_id):
-    """
-    Функция проверки символов в пользовательском идентификаторе.
-
-    :param custom_id: Пользовательский идентификатор.
-    :return: True, если все символы в пользовательском идентификаторе соответствуют допустимым символам,
-             False - в противном случае.
-    """
-    for elem in custom_id:
-        if elem not in SYMBOLS_CHOICE:
-            return False
-    return True
 
 
 def check_short_link(custom_id):
