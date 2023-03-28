@@ -1,4 +1,7 @@
 from string import ascii_letters, digits
+
+from yacut.models import URLMap
+
 SYMBOLS_CHOICE = list(ascii_letters + digits)
 
 
