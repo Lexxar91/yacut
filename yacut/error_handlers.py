@@ -1,7 +1,7 @@
 from flask import jsonify, render_template
 from http import HTTPStatus
 
-from . import db, app
+from yacut import db, app
 from yacut.models import URLMap
 
 

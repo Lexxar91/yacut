@@ -42,6 +42,6 @@ class URLMap(db.Model):
             )
         )
 
-    @classmethod
-    def get_unique_short_id(cls) -> str:
-        return str(''.join(random.choice(CHARS) for _ in range(1, 7)))
+    # @classmethod
+    # def get_unique_short_id(cls) -> str:
+    #     return str(''.join(random.choice(CHARS) for _ in range(1, 7)))
