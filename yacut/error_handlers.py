@@ -1,11 +1,11 @@
 from flask import jsonify, render_template
 from http import HTTPStatus
 
-from . import app, db
+from . import db, app
 from yacut.models import URLMap
 
 
-@app.errorhandler(404)
+@app.errorhandler(HTTPStatus.NOT_FOUND)
 def page_not_found(error):
     """
     Функция обработчика ошибки 404. Отображает страницу с сообщением о том, что запрошенная страница не найдена.
@@ -23,7 +23,7 @@ class InvalidAPIUsage(Exception):
     :param message: Сообщение об ошибке.
     :param status_code: Код HTTP-статуса ошибки.
     """
-    status_code = 400
+    status_code = HTTPStatus.BAD_REQUEST
 
     def __init__(self, message, status_code=None):
         super().__init__()
@@ -51,7 +51,7 @@ def invalid_api_usage(error):
     return jsonify(error.to_dict()), error.status_code
 
 
-@app.errorhandler(500)
+@app.errorhandler(HTTPStatus.INTERNAL_SERVER_ERROR)
 def internal_error(error):
     """
     Функция обработчика ошибки 500. Отображает страницу с сообщением о технической проблеме на сервере.
