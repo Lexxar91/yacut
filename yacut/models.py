@@ -1,12 +1,10 @@
 from datetime import datetime
-import random
-
 from yacut import db
 
 
 from flask import url_for
 from sqlalchemy_utils import URLType
-
+import random
 from yacut.constants import CHARS
 
 

@@ -1,5 +1,5 @@
-from flask import jsonify, request
 from http import HTTPStatus
+from flask import jsonify, request
 from . import app, db
 from .constants import NOT_FOUND_ID, MISSING_REQUEST, REQUIRED_FIELD, ERROR_SHORT_URL
 from .error_handlers import InvalidAPIUsage, check_short_link

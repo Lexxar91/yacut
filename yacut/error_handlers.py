@@ -1,8 +1,8 @@
-from flask import jsonify, render_template
 from http import HTTPStatus
+from flask import jsonify, render_template
 
-from yacut import db, app
-from yacut.models import URLMap
+from . import db, app
+from .models import URLMap
 
 
 @app.errorhandler(HTTPStatus.NOT_FOUND)
