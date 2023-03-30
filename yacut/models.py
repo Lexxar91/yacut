@@ -1,5 +1,5 @@
 from datetime import datetime
-from yacut import db
+from . import db
 
 
 from flask import url_for
