@@ -4,7 +4,7 @@ from . import app, db
 from .constants import NOT_FOUND_ID, MISSING_REQUEST, REQUIRED_FIELD, ERROR_SHORT_URL
 from .error_handlers import InvalidAPIUsage, check_short_link
 from .models import URLMap
-from .utils import check_symbols, get_unique_short_id
+from .utils import check_symbols
 
 
 @app.route('/api/id/', methods=['POST'])
@@ -25,7 +25,7 @@ def create_short_link():
         raise InvalidAPIUsage(REQUIRED_FIELD, HTTPStatus.BAD_REQUEST)
 
     if 'custom_id' not in data or data['custom_id'] is None:
-        data['custom_id'] = get_unique_short_id()
+        data['custom_id'] = URLMap.get_unique_short_id()
 
     custom_id = data['custom_id']
     if len(custom_id) > 16 or not check_symbols(custom_id):
