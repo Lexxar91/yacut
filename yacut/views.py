@@ -7,7 +7,7 @@ from .constants import YOUR_NEW_SHORT_LINK
 
 
 @app.route('/', methods=['GET', 'POST'])
-def main_page() -> str | Response:
+def main_page():
     """
     Отображает главную страницу сайта и обрабатывает отправленную форму.
 
