@@ -29,6 +29,3 @@ def check_short_link(custom_id):
     if URLMap.query.filter_by(short=custom_id).first() is not None:
         return custom_id
     return None
-
-
-
