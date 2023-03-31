@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import SubmitField, URLField
 from wtforms.validators import DataRequired, Length, Optional
 
-from yacut.constants import DESCRIPTION_URL, YOUR_CHOICE, MISSING_DATA
+from yacut.constants import DESCRIPTION_URL, MISSING_DATA, YOUR_CHOICE
 
 
 class UrlMapForm(FlaskForm):
@@ -17,9 +17,9 @@ class UrlMapForm(FlaskForm):
     original_link = URLField(
         DESCRIPTION_URL,
         validators=[DataRequired(message=MISSING_DATA),
-                    Length(1, 256)])
+                    Length(max=256)])
     custom_id = URLField(
         YOUR_CHOICE,
-        validators=[Length(1, 16), Optional()]
+        validators=[Length(max=16), Optional()]
     )
     submit = SubmitField('Создать')

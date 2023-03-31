@@ -1,7 +1,6 @@
 YOUR_NEW_SHORT_LINK = 'Ваша новая ссылка готова:'
 DESCRIPTION_URL = 'Длинная ссылка'
 YOUR_CHOICE = 'Ваш вариант короткой ссылки'
-CHARS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 NOT_FOUND_ID = 'Указанный id не найден'
 MISSING_REQUEST = 'Отсутствует тело запроса'
 REQUIRED_FIELD = '"url" является обязательным полем!'

@@ -1,9 +1,10 @@
-from flask import render_template, redirect, request, flash, Response
-from . import db, app
-from .error_handlers import check_short_link
-from .models import URLMap
-from .forms import UrlMapForm
+from flask import Response, flash, redirect, render_template, request
+
+from . import app, db
 from .constants import YOUR_NEW_SHORT_LINK
+from .error_handlers import check_short_link
+from .forms import UrlMapForm
+from .models import URLMap
 
 
 @app.route('/', methods=['GET', 'POST'])

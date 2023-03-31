@@ -1,10 +1,12 @@
+import random
 from datetime import datetime
-from . import db
+from string import ascii_letters, digits
 
 from flask import url_for
-# from sqlalchemy_utils import URLType
-import random
-from yacut.constants import CHARS
+
+from . import db
+
+SYMBOLS_CHOICE = list(ascii_letters + digits)
 
 
 class URLMap(db.Model):
@@ -43,4 +45,4 @@ class URLMap(db.Model):
 
     @classmethod
     def get_unique_short_id(cls) -> str:
-        return str(''.join(random.choice(CHARS) for _ in range(1, 7)))
+        return str(''.join(random.choice(SYMBOLS_CHOICE) for _ in range(1, 7)))

@@ -12,10 +12,8 @@
   <title>{% block title %}YaCut - укоротитель ссылок {% endblock title %}</title>
 </head>
  <body>
-    <!-- Тут подключается шаблон header.html. Создадим его чуть позже -->
     {% include "header.html" %}
     {% block content %}{% endblock content %}
-    <!-- Тут подключается шаблон footer.html. Его тоже скоро создадим -->
     {% include "footer.html" %}
   </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
