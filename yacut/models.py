@@ -25,8 +25,8 @@ class URLMap(db.Model):
         to_dict(self): Возвращает словарь данных, представляющих объект.
     """
     id = db.Column(db.Integer, primary_key=True)
-    original = db.Column(db.String(256), nullable=False)
-    short = db.Column(db.String(16), nullable=False, unique=True)
+    original = db.Column(db.String(max=256), nullable=False)
+    short = db.Column(db.String(max=16), nullable=False, unique=True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
     def from_dict(self, data) -> None:
